@@ -26,9 +26,9 @@ namespace BusinessLogic
                     factor += 0.2;
                     if (yearsOfExperience >10)
                         factor += 0.3;
-                    if (yearsOfExperience < 3)
+                        if (yearsOfExperience < 3)
                         factor += 0.2;
-                        if (stickersOnLaptop > yearsOfExperience)
+                    if (stickersOnLaptop > yearsOfExperience)
                             factor += 0.5;
                     break;
                 case 36:
@@ -38,11 +38,11 @@ namespace BusinessLogic
                     break;
             }
 
-            if (githubRepos > 10)
-                factor += 0.4;
-                if (stickersOnLaptop == 0)
-                    factor -= 0.5;
-
+            if (stickersOnLaptop == 0)            
+                factor *= -0.5;
+                if (githubRepos > 10)
+                    factor += 0.4;            
+            
             return factor * githubRepos + shoesize / yearsOfExperience;
         }
     }

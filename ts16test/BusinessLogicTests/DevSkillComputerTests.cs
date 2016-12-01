@@ -67,7 +67,15 @@ namespace BusinessLogic.Tests
         {
             double d;
             d =  DevSkillComputer.ComputeDeveloperCodingsSkills(1, 11, 0, 0);
-            Assert.AreEqual<double>(9.8999999999999986, d);
+            Assert.IsTrue(-2< d);
+        }
+
+        [TestMethod]
+        public void ComputeDeveloperCodingsSkillsTest282()
+        {
+            double d;
+            d = DevSkillComputer.ComputeDeveloperCodingsSkills(1, 11,1, 0);
+            Assert.IsTrue(12 < d);
         }
 
         [TestMethod]
